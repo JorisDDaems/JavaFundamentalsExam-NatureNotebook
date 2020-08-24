@@ -2,6 +2,7 @@ package be.intecbrussel.entities.animal_entities;
 
 import be.intecbrussel.entities.plant_entities.Plant;
 
+import javax.crypto.spec.PSource;
 import java.util.*;
 
 public class Omnivore extends Animal {
@@ -42,7 +43,7 @@ public class Omnivore extends Animal {
 
     public void printDiet(){
         plantDiet.stream().forEach(System.out::println);
-        plantDiet.forEach(System.out :: println);
+        System.out.println("Maximum food size: "+ getMaxFoodSize());
     }
 
     @Override

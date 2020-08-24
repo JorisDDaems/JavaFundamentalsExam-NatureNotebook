@@ -99,5 +99,7 @@ public class NatureApp {
 
         bosWandeling.printNoteBook();
         System.out.println();
+
+        bear.printDiet();
     }
 }

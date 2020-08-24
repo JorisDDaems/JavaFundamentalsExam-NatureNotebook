@@ -34,7 +34,6 @@ public class Herbivore extends Animal {
 
     public void printDiet(){
         plantDiet.stream().forEach(System.out::println);
-        plantDiet.forEach(System.out :: println);
     }
 
     @Override
