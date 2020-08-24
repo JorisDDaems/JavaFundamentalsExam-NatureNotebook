@@ -75,12 +75,19 @@ public class NatureApp {
         bosWandeling.addAnimal(crocodile);
         crocodile.setMaxFoodSize(210);
 
+/////////////////////////////////////////////////////////////////////////////////////////////
 
-        System.out.println(bosWandeling.getPlantCount());
-        System.out.println();
-        System.out.println(bosWandeling.getAnimalCount());
+        System.out.println("Amount of plants:" +bosWandeling.getPlantCount());
+        System.out.println("Amount of animals:" +bosWandeling.getAnimalCount());
         System.out.println();
         bosWandeling.printNoteBook();
+        System.out.println();
+
+        System.out.println(bosWandeling.getCarnivores());
+        System.out.println();
+        System.out.println(bosWandeling.getHerbivores());
+        System.out.println();
+        System.out.println(bosWandeling.getOmnivores());
         System.out.println();
 
         bosWandeling.sortAllAnimalsByName();
@@ -92,12 +99,5 @@ public class NatureApp {
 
         bosWandeling.printNoteBook();
         System.out.println();
-
-
-        bosWandeling.printTallAnimals();
-        bosWandeling.printHeavyAnimalsCount();
-
-
-
     }
 }

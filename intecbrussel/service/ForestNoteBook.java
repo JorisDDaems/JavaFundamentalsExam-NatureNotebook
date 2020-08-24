@@ -56,11 +56,14 @@ public class ForestNoteBook {
     public void addAnimal(Animal animal){
         if(!animals.equals(animal)) {
             animals.add(animal);
-            if(Objects.equals(animals, getHerbivores())){
-                setHerbivores((List<Herbivore>) animal);
+            if(animal instanceof Omnivore){
+                omnivores.add((Omnivore) animal);
+            } else if(animal instanceof Herbivore){
+                herbivores.add((Herbivore) animal);
+            } else {
+                carnivores.add((Carnivore) animal);
             }
         }
-
     }
 
     public void addPlant(Plant plant){
@@ -86,8 +89,14 @@ public class ForestNoteBook {
     }
 
     public void printHeavyAnimalsCount(){
-        Map<Object, Long> counted = herbivores.stream().collect(Collectors.groupingBy(e -> e.getWeight()>50, Collectors.counting()));
-        System.out.println(counted);
+        Map<Object, Long> countH = herbivores.stream().collect(Collectors.groupingBy(e -> e.getWeight()>50, Collectors.counting()));
+        System.out.println("There are this many herbivores over 50 kg: " +countH);
+
+        Map<Object, Long> countC = carnivores.stream().collect(Collectors.groupingBy(e -> e.getWeight()>50, Collectors.counting()));
+        System.out.println("There are this many carnivores over 50 kg: " +countC);
+
+        Map<Object, Long> countO = omnivores.stream().collect(Collectors.groupingBy(e -> e.getWeight()>50, Collectors.counting()));
+        System.out.println("There are this many omnivores over 50 kg: " +countO);
         }
 
     public void printTallAnimals(){
